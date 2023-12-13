@@ -2,6 +2,7 @@
 
 ## Overview
 
+Do you ever buy something, only to find later that you had a discount for it?  
 This Python project is a Telegram bot that scrapes various sources for discounts and provides them to users on command.
 
 The project consists of two main components:

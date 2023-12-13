@@ -24,6 +24,13 @@ async def send_discounts_message(update, context, discount_groups: list[Discount
             chat_id=chat_id, text=message[x:x+MAX_CHARACTERS], disable_web_page_preview=len(discount_groups) != 1, parse_mode="HTML")
 
 
+async def start(update, context):
+    chat_id = update.effective_chat.id
+    await context.bot.send_message(chat_id=chat_id, text="Welcome to the discount bot! Use /search to find discounts.")
+
+    return ConversationHandler.END
+
+
 async def search(update, context):
     print("Received request /search")
     chat_id = update.effective_chat.id
@@ -78,7 +85,7 @@ def get_discounts_from_file(word_filter: str = "") -> list[DiscountGroup]:
 def start_bot(bot_token):
     # https://github.com/python-telegram-bot/python-telegram-bot/wiki/Webhooks#polling-vs-webhook
     application = Application.builder().token(bot_token).build()
-    application.add_handler(CommandHandler("start", search))
+    application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("all", all_discounts))
 
     application.add_handler(

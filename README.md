@@ -7,7 +7,7 @@ This Python project is a Telegram bot that scrapes various sources for discounts
 
 The project consists of two main components:
 - A discount updater script (`main_discount_updater.py`)
-- The Telegram bot itself (`main_telegram_bot.py`).
+- The Telegram bot itself (`main_telegram_bot.py`)
 
 ## Installation
 

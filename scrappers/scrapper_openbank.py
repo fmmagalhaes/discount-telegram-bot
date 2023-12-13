@@ -65,7 +65,6 @@ class OpenBankScrapper(Scrapper):
             discount = Discount(content)
             discounts.append(discount)
 
-        print(
-            f"{datetime.now().time()}: {source} - got {len(discounts)} discounts\n")
+        print(f"{datetime.now().time()}: {source} - got {len(discounts)} discounts\n")
 
         return discounts

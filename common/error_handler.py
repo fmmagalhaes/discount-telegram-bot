@@ -6,9 +6,12 @@ import requests
 def handle_error(bot_config, message):
     print(message)
 
+    if "CHAT_ID" not in bot_config:
+        return
+
     # let's handle the error by sending a message to the chat
     token = bot_config["TOKEN"]
-    chat_id = bot_config["CHAT"]
+    chat_id = bot_config["CHAT_ID"]
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
 
